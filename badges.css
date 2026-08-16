@@ -1,4 +1,4 @@
-/* galerie des badges de profil */
+/* Concrete Jungle — galerie des badges de profil */
 
 #wombat.cj-profile .cj-profile__drawer-content .profile_field.cj-profile__badges-field {
     display: block !important;
@@ -7,6 +7,14 @@
     max-width: none !important;
     margin: 0 !important;
     padding: 0 !important;
+}
+
+/* Priorité supérieure aux règles générales [data-cj-zone] du profil. */
+html body #wombat.cj-profile .profile_infos.cj-profile__main [data-cj-zone="badges"].cj-profile__drawer-content > .profile_field.cj-profile__badges-field {
+    display: block !important;
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-width: none !important;
 }
 
 #wombat.cj-profile .cj-profile__drawer-content .profile_field.cj-profile__badges-field > label,
@@ -31,12 +39,51 @@
     display: block;
     width: 58px;
     height: 58px;
-    overflow: hidden;
+    overflow: visible;
     border: 0 !important;
     border-radius: 0;
     background: transparent !important;
     box-shadow: none !important;
     transition: transform .18s ease;
+}
+
+#wombat.cj-profile .cj-badge__tooltip {
+    position: absolute;
+    z-index: 20;
+    left: 50%;
+    bottom: calc(100% + 8px);
+    width: max-content;
+    max-width: 190px;
+    padding: 6px 9px;
+    border-radius: 6px;
+    background: var(--neutralDark, #17131f);
+    color: var(--textColor, #fff);
+    font: 600 10px/1.3 var(--font, Arial, sans-serif);
+    letter-spacing: .02em;
+    text-align: center;
+    white-space: normal;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, 4px);
+    transition: opacity .15s ease, transform .15s ease, visibility .15s ease;
+}
+
+#wombat.cj-profile .cj-badge__tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    border: 5px solid transparent;
+    border-top-color: var(--neutralDark, #17131f);
+    transform: translateX(-50%);
+}
+
+#wombat.cj-profile .cj-badge:hover .cj-badge__tooltip,
+#wombat.cj-profile .cj-badge:focus-within .cj-badge__tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
 }
 
 #wombat.cj-profile .cj-badge:hover {
