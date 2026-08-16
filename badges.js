@@ -97,8 +97,26 @@
 
         if (!validCodes.length) return;
 
+        var labelNode = field.querySelector(':scope > label');
+
+        /* Les règles générales du profil imposent une grille 95px + contenu.
+           On neutralise directement cette grille pour laisser toute la largeur
+           à la galerie, sur page complète comme dans la popup AJAX. */
+        field.style.setProperty('display', 'block', 'important');
+        field.style.setProperty('grid-column', '1 / -1', 'important');
+        field.style.setProperty('width', '100%', 'important');
+        field.style.setProperty('max-width', 'none', 'important');
+        field.style.setProperty('margin', '0', 'important');
+        field.style.setProperty('padding', '0', 'important');
+
+        if (labelNode) labelNode.style.setProperty('display', 'none', 'important');
+        if (valueNode) valueNode.style.setProperty('display', 'none', 'important');
+
         var gallery = document.createElement('div');
         gallery.className = 'cj-badges-gallery';
+        gallery.style.setProperty('display', 'flex', 'important');
+        gallery.style.setProperty('flex-flow', 'row wrap', 'important');
+        gallery.style.setProperty('width', '100%', 'important');
 
         validCodes.forEach(function (code) {
             var badge = BADGES[code];
@@ -119,7 +137,6 @@
         });
 
         field.classList.add('cj-profile__badges-field');
-        if (valueNode) valueNode.style.display = 'none';
         field.appendChild(gallery);
         field.setAttribute('data-cj-badges-ready', 'true');
     }
