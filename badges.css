@@ -53,3 +53,43 @@
     max-height: none !important;
     object-fit: cover;
 }
+
+/* CORRECTIF BADGES 1 */
+
+html body #wombat.cj-profile .profile_infos.cj-profile__main [data-cj-zone="badges"].cj-profile__drawer-content > .profile_field.cj-profile__badges-field {
+    display: block !important;
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+html body #wombat.cj-profile [data-cj-zone="badges"] .cj-profile__badges-field > label,
+html body #wombat.cj-profile [data-cj-zone="badges"] .cj-profile__badges-field > field {
+    display: none !important;
+}
+
+html body #wombat.cj-profile [data-cj-zone="badges"] .cj-badges-gallery {
+    display: flex !important;
+    flex-flow: row wrap !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+html body #wombat.cj-profile [data-cj-zone="badges"] .cj-badge {
+    flex: 0 0 58px !important;
+    display: block !important;
+    width: 58px !important;
+    height: 58px !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
