@@ -46,6 +46,7 @@
         'love-gay': ['Gay', 'love-is-love/gay.png'],
         'love-heterosexual': ['Hétérosexuel·le', 'love-is-love/heterosexual.png'],
         'love-lesbian': ['Lesbienne', 'love-is-love/lesbian.png'],
+        'love-lgbtqia-plus': ['LGBTQIA+', 'love-is-love/lgbtqia-plus.png'],
         'love-pansexual': ['Pansexuel·le', 'love-is-love/pansexual.png'],
 
         'heart-couple': ['En couple', 'matters-of-the-heart/couple.png'],
