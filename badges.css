@@ -180,3 +180,79 @@ html body #wombat.cj-profile [data-cj-zone="badges"] .cj-badge:hover .cj-badge__
     visibility: visible !important;
     transform: translate(-50%, 0) !important;
 }
+
+/* Badges dans les miniprofils des sujets. */
+html body .post_row .user_field.cj-post-badges-field {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 8px 0 !important;
+}
+
+html body .post_row .cj-post-badges-field > .field_label,
+html body .post_row .cj-post-badges-field > .field_content,
+html body .post_row .cj-post-badges-field > .field_separator {
+    display: none !important;
+}
+
+html body .post_row .cj-post-badges-gallery {
+    display: flex !important;
+    flex-flow: row wrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 7px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+}
+
+html body .post_row .cj-post-badge {
+    position: relative !important;
+    flex: 0 0 42px !important;
+    display: block !important;
+    width: 42px !important;
+    height: 42px !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+}
+
+html body .post_row .cj-post-badge img {
+    display: block !important;
+    width: 42px !important;
+    height: 42px !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: cover !important;
+}
+
+html body .post_row .cj-post-badge .cj-badge__tooltip {
+    position: absolute !important;
+    z-index: 999 !important;
+    left: 50% !important;
+    bottom: calc(100% + 6px) !important;
+    display: block !important;
+    width: max-content !important;
+    max-width: 150px !important;
+    padding: 5px 7px !important;
+    border-radius: 5px !important;
+    background: var(--neutralDark, #17131f) !important;
+    color: var(--textColor, #fff) !important;
+    font: 600 9px/1.3 var(--font, Arial, sans-serif) !important;
+    text-align: center !important;
+    white-space: normal !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translate(-50%, 4px) !important;
+    transition: opacity .15s ease, transform .15s ease, visibility .15s ease !important;
+}
+
+html body .post_row .cj-post-badge:hover .cj-badge__tooltip {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translate(-50%, 0) !important;
+}
