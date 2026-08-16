@@ -61,7 +61,30 @@
         'roof-roommates-1': ['Colocation — variante 1', 'under-my-roof/roommates-1.png'],
         'roof-roommates-2': ['Colocation — variante 2', 'under-my-roof/roommates-2.png'],
         'roof-family': ['Vit avec sa famille', 'under-my-roof/with-family.png'],
-        'roof-partner': ['Vit avec son/sa partenaire', 'under-my-roof/with-partner.png']
+        'roof-partner': ['Vit avec son/sa partenaire', 'under-my-roof/with-partner.png'],
+
+        'gang-vault-1': ['The Vault — variante 1', 'the-gangs/the-vault-1.png'],
+        'gang-last-masquerade-1': ['The Last Masquerade — variante 1', 'the-gangs/the-last-masquerade-1.png'],
+        'gang-last-masquerade-2': ['The Last Masquerade — variante 2', 'the-gangs/the-last-masquerade-2.png'],
+        'gang-last-masquerade-3': ['The Last Masquerade — variante 3', 'the-gangs/the-last-masquerade-3.png'],
+        'gang-cleaners-1': ['The Cleaners — variante 1', 'the-gangs/the-cleaners-1.png'],
+        'gang-cleaners-2': ['The Cleaners — variante 2', 'the-gangs/the-cleaners-2.png'],
+        'gang-book-1': ['The Book — variante 1', 'the-gangs/the-book-1.png'],
+        'gang-book-2': ['The Book — variante 2', 'the-gangs/the-book-2.png'],
+        'gang-riders-1': ['Riders of the Apocalypse — variante 1', 'the-gangs/riders-of-the-apocalypse-1.png'],
+        'gang-riders-2': ['Riders of the Apocalypse — variante 2', 'the-gangs/riders-of-the-apocalypse-2.png'],
+        'gang-riders-3': ['Riders of the Apocalypse — variante 3', 'the-gangs/riders-of-the-apocalypse-3.png'],
+        'gang-primo-sangue': ['Primo Sangue', 'the-gangs/primo-sangue.png'],
+
+        'music-violin': ['Violon', 'music-of-my-life/violin.png'],
+        'music-solo': ['Artiste solo', 'music-of-my-life/solo.png'],
+        'music-saxophone': ['Saxophone', 'music-of-my-life/saxophone.png'],
+        'music-vocals': ['Chant', 'music-of-my-life/vocals.png'],
+        'music-harp-1': ['Harpe — variante 1', 'music-of-my-life/harp-1.png'],
+        'music-guitar': ['Guitare', 'music-of-my-life/guitar.png'],
+        'music-band': ['Groupe', 'music-of-my-life/band.png'],
+        'music-electronic': ['Musique électronique', 'music-of-my-life/electronic.png'],
+        'music-drums': ['Batterie', 'music-of-my-life/drums.png']
     };
 
     function cleanLabel(value) {
