@@ -121,6 +121,13 @@
         return value.replace(/\s+/g, ' ').trim();
     }
 
+    function publicBadgeLabel(value) {
+        return String(value || '')
+            .replace(/\s*[—–-]\s*variante\s*\d+\s*$/i, '')
+            .replace(/\s*\(\s*variante\s*\d+\s*\)\s*$/i, '')
+            .trim();
+    }
+
     function findBadgeField(root) {
         var result = null;
         Array.prototype.some.call(root.querySelectorAll('.profile_field'), function (field) {
@@ -171,21 +178,22 @@
 
         validCodes.forEach(function (code) {
             var badge = BADGES[code];
+            var publicLabel = publicBadgeLabel(badge[0]);
             var item = document.createElement('span');
             item.className = 'cj-badge';
             item.setAttribute('data-badge-code', code);
-            item.setAttribute('aria-label', badge[0]);
+            item.setAttribute('aria-label', publicLabel);
 
             var image = document.createElement('img');
             image.src = BASE + badge[1];
-            image.alt = badge[0];
+            image.alt = publicLabel;
             image.loading = 'lazy';
             image.width = 58;
             image.height = 58;
 
             var tooltip = document.createElement('span');
             tooltip.className = 'cj-badge__tooltip';
-            tooltip.textContent = badge[0];
+            tooltip.textContent = publicLabel;
 
             item.appendChild(image);
             item.appendChild(tooltip);
@@ -223,21 +231,22 @@
 
             validCodes.forEach(function (code) {
                 var badge = BADGES[code];
+                var publicLabel = publicBadgeLabel(badge[0]);
                 var item = document.createElement('span');
                 item.className = 'cj-badge cj-post-badge';
                 item.setAttribute('data-badge-code', code);
-                item.setAttribute('aria-label', badge[0]);
+                item.setAttribute('aria-label', publicLabel);
 
                 var image = document.createElement('img');
                 image.src = BASE + badge[1];
-                image.alt = badge[0];
+                image.alt = publicLabel;
                 image.loading = 'lazy';
                 image.width = 42;
                 image.height = 42;
 
                 var tooltip = document.createElement('span');
                 tooltip.className = 'cj-badge__tooltip';
-                tooltip.textContent = badge[0];
+                tooltip.textContent = publicLabel;
 
                 item.appendChild(image);
                 item.appendChild(tooltip);
