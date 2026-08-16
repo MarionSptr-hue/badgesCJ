@@ -169,10 +169,69 @@
         field.setAttribute('data-cj-badges-ready', 'true');
     }
 
+    function renderPostBadges(container) {
+        var fields = container.querySelectorAll
+            ? container.querySelectorAll('.post_row .user_field.field-badges, .post_row .user_field')
+            : [];
+
+        Array.prototype.forEach.call(fields, function (field) {
+            if (field.getAttribute('data-cj-post-badges-ready') === 'true') return;
+
+            var label = field.querySelector('.field_label');
+            if (!field.classList.contains('field-badges') &&
+                cleanLabel(label ? label.textContent : '') !== 'badges') return;
+
+            var value = field.querySelector('.field_content');
+            var raw = value ? value.textContent : '';
+            var codes = String(raw || '').toLowerCase().split(/[\s,;|]+/).filter(Boolean);
+            var validCodes = codes.filter(function (code, index) {
+                return BADGES[code] && codes.indexOf(code) === index;
+            });
+
+            if (!validCodes.length) return;
+
+            var gallery = document.createElement('div');
+            gallery.className = 'cj-badges-gallery cj-post-badges-gallery';
+
+            validCodes.forEach(function (code) {
+                var badge = BADGES[code];
+                var item = document.createElement('span');
+                item.className = 'cj-badge cj-post-badge';
+                item.setAttribute('data-badge-code', code);
+                item.setAttribute('aria-label', badge[0]);
+
+                var image = document.createElement('img');
+                image.src = BASE + badge[1];
+                image.alt = badge[0];
+                image.loading = 'lazy';
+                image.width = 42;
+                image.height = 42;
+
+                var tooltip = document.createElement('span');
+                tooltip.className = 'cj-badge__tooltip';
+                tooltip.textContent = badge[0];
+
+                item.appendChild(image);
+                item.appendChild(tooltip);
+                gallery.appendChild(item);
+            });
+
+            if (label) label.style.setProperty('display', 'none', 'important');
+            if (value) value.style.setProperty('display', 'none', 'important');
+            var separator = field.querySelector('.field_separator');
+            if (separator) separator.style.setProperty('display', 'none', 'important');
+
+            field.classList.add('cj-post-badges-field');
+            field.appendChild(gallery);
+            field.setAttribute('data-cj-post-badges-ready', 'true');
+        });
+    }
+
     function scan(container) {
         if (container && container.matches && container.matches('#wombat.cj-profile')) render(container);
         if (container && container.querySelectorAll) {
             Array.prototype.forEach.call(container.querySelectorAll('#wombat.cj-profile'), render);
+            renderPostBadges(container);
         }
     }
 
