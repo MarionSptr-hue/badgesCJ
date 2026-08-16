@@ -123,7 +123,7 @@
             var item = document.createElement('span');
             item.className = 'cj-badge';
             item.setAttribute('data-badge-code', code);
-            item.title = badge[0];
+            item.setAttribute('aria-label', badge[0]);
 
             var image = document.createElement('img');
             image.src = BASE + badge[1];
@@ -132,7 +132,12 @@
             image.width = 58;
             image.height = 58;
 
+            var tooltip = document.createElement('span');
+            tooltip.className = 'cj-badge__tooltip';
+            tooltip.textContent = badge[0];
+
             item.appendChild(image);
+            item.appendChild(tooltip);
             gallery.appendChild(item);
         });
 
