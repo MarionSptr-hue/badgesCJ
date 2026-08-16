@@ -84,7 +84,34 @@
         'music-guitar': ['Guitare', 'music-of-my-life/guitar.png'],
         'music-band': ['Groupe', 'music-of-my-life/band.png'],
         'music-electronic': ['Musique électronique', 'music-of-my-life/electronic.png'],
-        'music-drums': ['Batterie', 'music-of-my-life/drums.png']
+        'music-drums': ['Batterie', 'music-of-my-life/drums.png'],
+
+        'theater-mask-1': ['Theater Kid — variante 1', 'theater-kid/theater-mask-1.png'],
+        'theater-mask-12': ['Theater Kid — variante 12', 'theater-kid/theater-mask-12.png'],
+
+        'reward-welcome-wagon': ['Welcome Wagon', 'flood-et-vie-du-forum/welcome-wagon.png'],
+        'reward-take-a-chance-on-me': ['Take a Chance on Me', 'flood-et-vie-du-forum/take-a-chance-on-me.png'],
+        'reward-serial-voter': ['Serial Voter', 'flood-et-vie-du-forum/serial-voter.png'],
+        'reward-serial-creator': ['Serial Creator', 'flood-et-vie-du-forum/serial-creator.png'],
+        'reward-send-help': ['Send Help', 'flood-et-vie-du-forum/send-help.png'],
+        'reward-plot-bunny': ['Plot Bunny', 'flood-et-vie-du-forum/plot-bunny.png'],
+        'reward-out-and-about': ['Out and About', 'flood-et-vie-du-forum/out-and-about.png'],
+        'reward-oops-i-did-it-again': ['Oops, I Did It Again', 'flood-et-vie-du-forum/oops-i-did-it-again.png'],
+        'reward-one-year-later': ['One Year Later', 'flood-et-vie-du-forum/one-year-later.png'],
+        'reward-nailed-it': ['Nailed It', 'flood-et-vie-du-forum/nailed-it.png'],
+        'reward-matchmaker': ['Matchmaker', 'flood-et-vie-du-forum/matchmaker.png'],
+        'reward-limited-edition': ['Limited Edition', 'flood-et-vie-du-forum/limited-edition.png'],
+        'reward-helping-hand': ['Helping Hand', 'flood-et-vie-du-forum/helping-hand.png'],
+        'reward-hello-london': ['Hello, London', 'flood-et-vie-du-forum/hello-london.png'],
+        'reward-heart-of-gold': ['Heart of Gold', 'flood-et-vie-du-forum/heart-of-gold.png'],
+        'reward-getting-started': ['Getting Started', 'flood-et-vie-du-forum/getting-started.png'],
+        'reward-full-house': ['Full House', 'flood-et-vie-du-forum/full-house.png'],
+        'reward-crossed-paths': ['Crossed Paths', 'flood-et-vie-du-forum/crossed-paths.png'],
+        'reward-case-closed': ['Case Closed', 'flood-et-vie-du-forum/case-closed.png'],
+        'reward-build-a-family': ['Build a Family', 'flood-et-vie-du-forum/build-a-family.png'],
+        'reward-booked-and-busy-1': ['Booked and Busy — variante 1', 'flood-et-vie-du-forum/booked-and-busy-1.png'],
+        'reward-archivist': ['Archivist', 'flood-et-vie-du-forum/archivist.png'],
+        'reward-adopt-a-newbie': ['Adopt a Newbie', 'flood-et-vie-du-forum/adopt-a-newbie.png']
     };
 
     function cleanLabel(value) {
