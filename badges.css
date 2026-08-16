@@ -229,11 +229,16 @@ html body .post_row .cj-post-badge img {
     object-fit: cover !important;
 }
 
+html body .post_row .cj-post-badge:hover {
+    z-index: 1000 !important;
+}
+
 html body .post_row .cj-post-badge .cj-badge__tooltip {
     position: absolute !important;
     z-index: 999 !important;
     left: 50% !important;
-    bottom: calc(100% + 6px) !important;
+    top: calc(100% + 6px) !important;
+    bottom: auto !important;
     display: block !important;
     width: max-content !important;
     max-width: 150px !important;
@@ -247,7 +252,7 @@ html body .post_row .cj-post-badge .cj-badge__tooltip {
     pointer-events: none !important;
     opacity: 0 !important;
     visibility: hidden !important;
-    transform: translate(-50%, 4px) !important;
+    transform: translate(-50%, -4px) !important;
     transition: opacity .15s ease, transform .15s ease, visibility .15s ease !important;
 }
 
