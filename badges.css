@@ -130,6 +130,7 @@ html body #wombat.cj-profile [data-cj-zone="badges"] .cj-badges-gallery {
 }
 
 html body #wombat.cj-profile [data-cj-zone="badges"] .cj-badge {
+    position: relative !important;
     flex: 0 0 58px !important;
     display: block !important;
     width: 58px !important;
@@ -138,5 +139,44 @@ html body #wombat.cj-profile [data-cj-zone="badges"] .cj-badge {
     border-radius: 0 !important;
     background: transparent !important;
     box-shadow: none !important;
+    overflow: visible !important;
 }
 
+html body #wombat.cj-profile [data-cj-zone="badges"] .cj-badge__tooltip {
+    position: absolute !important;
+    z-index: 999 !important;
+    left: 50% !important;
+    bottom: calc(100% + 8px) !important;
+    display: block !important;
+    width: max-content !important;
+    max-width: 190px !important;
+    padding: 6px 9px !important;
+    border-radius: 6px !important;
+    background: var(--neutralDark, #17131f) !important;
+    color: var(--textColor, #fff) !important;
+    font: 600 10px/1.3 var(--font, Arial, sans-serif) !important;
+    letter-spacing: .02em !important;
+    text-align: center !important;
+    white-space: normal !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translate(-50%, 4px) !important;
+    transition: opacity .15s ease, transform .15s ease, visibility .15s ease !important;
+}
+
+html body #wombat.cj-profile [data-cj-zone="badges"] .cj-badge__tooltip::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 50% !important;
+    border: 5px solid transparent !important;
+    border-top-color: var(--neutralDark, #17131f) !important;
+    transform: translateX(-50%) !important;
+}
+
+html body #wombat.cj-profile [data-cj-zone="badges"] .cj-badge:hover .cj-badge__tooltip {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translate(-50%, 0) !important;
+}
