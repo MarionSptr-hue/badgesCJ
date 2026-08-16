@@ -1,22 +1,29 @@
-/* Concrete Jungle — galerie des badges de profil */
+/* galerie des badges de profil */
 
 #wombat.cj-profile .cj-profile__drawer-content .profile_field.cj-profile__badges-field {
     display: block !important;
     grid-column: 1 / -1 !important;
     width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-#wombat.cj-profile .cj-profile__badges-field > label,
-#wombat.cj-profile .cj-profile__badges-field > field {
+#wombat.cj-profile .cj-profile__drawer-content .profile_field.cj-profile__badges-field > label,
+#wombat.cj-profile .cj-profile__drawer-content .profile_field.cj-profile__badges-field > field {
     display: none !important;
 }
 
 #wombat.cj-profile .cj-badges-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 58px);
+    display: flex !important;
+    flex-flow: row wrap !important;
+    align-items: center;
     gap: 10px;
-    justify-content: start;
-    width: 100%;
+    justify-content: flex-start;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 #wombat.cj-profile .cj-badge {
@@ -25,17 +32,17 @@
     width: 58px;
     height: 58px;
     overflow: hidden;
-    border: 1px solid var(--neutralDarker, rgba(255,255,255,.08));
-    border-radius: 10px;
-    background: var(--neutral, transparent);
-    box-shadow: 0 3px 10px rgba(0,0,0,.08);
-    transition: transform .18s ease, box-shadow .18s ease;
+    border: 0 !important;
+    border-radius: 0;
+    background: transparent !important;
+    box-shadow: none !important;
+    transition: transform .18s ease;
 }
 
 #wombat.cj-profile .cj-badge:hover {
     z-index: 2;
     transform: translateY(-3px) scale(1.06);
-    box-shadow: 0 6px 15px rgba(0,0,0,.18);
+    box-shadow: none !important;
 }
 
 #wombat.cj-profile .cj-badge img {
