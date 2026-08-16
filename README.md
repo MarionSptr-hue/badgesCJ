@@ -10,4 +10,4 @@ https://VOTRE-COMPTE.github.io/VOTRE-DEPOT/badges/its-a-sign/aries.png
 
 Ne pas renommer ni déplacer un fichier après son intégration au JavaScript Forumactif : son URL publique serait cassée.
 
-Inventaire actuel : 51 images.
+Inventaire actuel : 98 images.
