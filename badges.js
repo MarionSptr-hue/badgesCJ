@@ -1,17 +1,10 @@
-/* Gestion des badges sur les profils et dans les sujets. */
+/* affichage des badges dans les profils */
 ;(function () {
     'use strict';
 
-    // Tous les visuels partent de ce dossier.
     var BASE = 'https://marionsptr-hue.github.io/badgesCJ/badges/';
 
-    /*
-     * La liste complète des badges.
-     * À gauche : le code à mettre dans le champ de profil.
-     * À droite : le nom visible au survol, puis le chemin de l'image.
-     */
     var BADGES = {
-        // Métiers et occupations
         'job-artist': ['Artiste', 'clocked-in/artist.png'],
         'job-corporate-1': ['Corporate', 'clocked-in/corporate-1.png'],
         'job-corporate-2': ['Corporate', 'clocked-in/corporate-2.png'],
@@ -25,18 +18,15 @@
         'job-student': ['Étudiant·e', 'clocked-in/student.png'],
         'job-unemployed': ['Sans emploi', 'clocked-in/unemployed.png'],
 
-        // Animaux
         'pet-both-1': ['Chat et chien', 'fur-real/both-1.png'],
         'pet-both-2': ['Chat et chien', 'fur-real/both-2.png'],
         'pet-cat': ['Chat', 'fur-real/cat.png'],
         'pet-dog': ['Chien', 'fur-real/dog.png'],
         'pet-small': ['Petits animaux', 'fur-real/small-pets.png'],
 
-        // Origines
         'home-londoner': ['Londoner', 'home-is-where/londoner.png'],
         'home-outsider': ['Outsider', 'home-is-where/outsider.png'],
 
-        // Signes astrologiques
         'sign-aquarius': ['Verseau', 'its-a-sign/aquarius.png'],
         'sign-aries': ['Bélier', 'its-a-sign/aries.png'],
         'sign-cancer': ['Cancer', 'its-a-sign/cancer.png'],
@@ -50,7 +40,6 @@
         'sign-taurus': ['Taureau', 'its-a-sign/taurus.png'],
         'sign-virgo': ['Vierge', 'its-a-sign/virgo.png'],
 
-        // Orientations
         'love-asexual': ['Asexuel·le', 'love-is-love/asexual.png'],
         'love-bisexual': ['Bisexuel·le', 'love-is-love/bisexual.png'],
         'love-demisexual': ['Demisexuel·le', 'love-is-love/demisexual.png'],
@@ -60,16 +49,15 @@
         'love-lgbtqia-plus': ['LGBTQIA+', 'love-is-love/lgbtqia-plus.png'],
         'love-pansexual': ['Pansexuel·le', 'love-is-love/pansexual.png'],
 
-        // Vie sentimentale et familiale
         'heart-couple': ['En couple', 'matters-of-the-heart/couple.png'],
         'heart-divorced': ['Divorcé·e', 'matters-of-the-heart/divorced.png'],
         'heart-large-family': ['Famille nombreuse', 'matters-of-the-heart/large-family.png'],
         'heart-married': ['Marié·e', 'matters-of-the-heart/married.png'],
+        'heart-polyamory': ['Polyamour', 'matters-of-the-heart/polyamory.png'],
         'heart-parent': ['Parent·s', 'matters-of-the-heart/parent.png'],
         'heart-single': ['Célibataire', 'matters-of-the-heart/single.png'],
         'heart-widowed': ['Veuf·ve', 'matters-of-the-heart/widowed.png'],
 
-        // Logement
         'roof-alone': ['Vit seul·e', 'under-my-roof/alone.png'],
         'roof-hosted': ['Hébergé·e chez les autres', 'under-my-roof/hosted.png'],
         'roof-roommates-1': ['Colocation', 'under-my-roof/roommates-1.png'],
@@ -77,11 +65,11 @@
         'roof-family': ['Vit avec sa famille', 'under-my-roof/with-family.png'],
         'roof-partner': ['Vit avec son/sa partenaire', 'under-my-roof/with-partner.png'],
 
-        // Gangs
         'gang-vault-1': ['The Vault', 'the-gangs/the-vault-1.png'],
-        'gang-last-masquerade-1': ['The Last Masquerade', 'the-gangs/the-last-masquerade-1.png'],
-        'gang-last-masquerade-2': ['The Last Masquerade', 'the-gangs/the-last-masquerade-2.png'],
-        'gang-last-masquerade-3': ['The Last Masquerade', 'the-gangs/the-last-masquerade-3.png'],
+        'gang-last-masquerade-1': ['The Last Masquerade', 'the-gangs/the-last-masquerade.png'],
+        'gang-last-masquerade-2': ['The Last Masquerade', 'the-gangs/the-last-masquerade.png'],
+        'gang-last-masquerade-3': ['The Last Masquerade', 'the-gangs/the-last-masquerade.png'],
+        'gang-last-masquerade': ['The Last Masquerade', 'the-gangs/the-last-masquerade.png'],
         'gang-cleaners-1': ['The Cleaners', 'the-gangs/the-cleaners-1.png'],
         'gang-cleaners-2': ['The Cleaners', 'the-gangs/the-cleaners-2.png'],
         'gang-book-1': ['The Book', 'the-gangs/the-book-1.png'],
@@ -91,10 +79,10 @@
         'gang-riders-3': ['Riders of the Apocalypse', 'the-gangs/riders-of-the-apocalypse-3.png'],
         'gang-primo-sangue': ['Primo Sangue', 'the-gangs/primo-sangue.png'],
 
-        // Musique
         'music-violin': ['Violon', 'music-of-my-life/violin.png'],
         'music-solo': ['Artiste solo', 'music-of-my-life/solo.png'],
         'music-saxophone': ['Saxophone', 'music-of-my-life/saxophone.png'],
+        'music-piano': ['Piano', 'music-of-my-life/piano.png'],
         'music-vocals': ['Chant', 'music-of-my-life/vocals.png'],
         'music-harp-1': ['Harpe', 'music-of-my-life/harp-1.png'],
         'music-guitar': ['Guitare', 'music-of-my-life/guitar.png'],
@@ -102,11 +90,41 @@
         'music-electronic': ['Musique électronique', 'music-of-my-life/electronic.png'],
         'music-drums': ['Batterie', 'music-of-my-life/drums.png'],
 
-        // Théâtre
         'theater-mask-1': ['Theater Kid', 'theater-kid/theater-mask-1.png'],
         'theater-mask-12': ['Theater Kid', 'theater-kid/theater-mask-12.png'],
 
-        // Récompenses liées à la vie du forum
+        'sport-tennis': ['Tennis', 'sport/tennis.png'],
+        'sport-soccer': ['Football', 'sport/soccer.png'],
+        'sport-rugby': ['Rugby', 'sport/rugby.png'],
+        'sport-rowing': ['Aviron', 'sport/rowing.png'],
+        'sport-roller-derby': ['Roller derby', 'sport/roller-derby.png'],
+        'sport-hockey': ['Hockey', 'sport/hockey.png'],
+        'sport-gym-1': ['Salle de sport', 'sport/gym-1.png'],
+        'sport-gym-2': ['Salle de sport', 'sport/gym-2.png'],
+        'sport-gym-3': ['Salle de sport', 'sport/gym-3.png'],
+        'sport-fitness': ['Fitness', 'sport/fitness.png'],
+        'sport-archery': ['Tir à l’arc', 'sport/archery.png'],
+
+        'london-underground': ['London Underground', 'special-london/underground.png'],
+        'london-station': ['Station londonienne', 'special-london/station.png'],
+        'london-metro-2': ['Métro londonien', 'special-london/metro-2.png'],
+        'london-metro-4': ['Métro londonien', 'special-london/metro-4.png'],
+        'london-metro-5': ['Métro londonien', 'special-london/metro-5.png'],
+
+        'social-media-addict': ['Social Media Addict', 'social-media/social-media-addict.png'],
+        'social-serial-crush': ['Serial Crush', 'social-media/serial-crush.png'],
+        'social-popular': ['Populaire', 'social-media/popular.png'],
+
+        'rp-slow': ['Rythme RP lent', 'rythme-rp/slow-rp.png'],
+        'rp-fast': ['Rythme RP rapide', 'rythme-rp/fast-rp.png'],
+
+        'reward-terminally-online': ['Terminally Online', 'recompense-activite-messages/terminally-online.png'],
+        'reward-chatterbox': ['Chatterbox', 'recompense-activite-messages/chatterbox.png'],
+        'reward-cant-shut-up': ['Can’t Shut Up', 'recompense-activite-messages/cant-shut-up.png'],
+
+        'misc-omamori': ['Omamori', 'divers/omamori.png'],
+        'misc-floral-design': ['Floral Design', 'divers/floral-design.png'],
+
         'reward-welcome-wagon': ['Welcome Wagon', 'flood-et-vie-du-forum/welcome-wagon.png'],
         'reward-take-a-chance-on-me': ['Take a Chance on Me', 'flood-et-vie-du-forum/take-a-chance-on-me.png'],
         'reward-serial-voter': ['Serial Voter', 'flood-et-vie-du-forum/serial-voter.png'],
@@ -132,14 +150,12 @@
         'reward-adopt-a-newbie': ['Adopt a Newbie', 'flood-et-vie-du-forum/adopt-a-newbie.png']
     };
 
-    // Met un intitulé sous une forme simple pour pouvoir le comparer sans souci.
     function cleanLabel(value) {
         value = String(value || '').toLowerCase().replace(/[✦*:]/g, '');
         if (value.normalize) value = value.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
         return value.replace(/\s+/g, ' ').trim();
     }
 
-    // Esthétique mais du coup la mention « variante » est retirée du texte montré aux membres.
     function publicBadgeLabel(value) {
         return String(value || '')
             .replace(/\s*[—–-]\s*variante\s*\d+\s*$/i, '')
@@ -147,7 +163,6 @@
             .trim();
     }
 
-    // Retrouve le champ Badges dans un profil complet ou une popup.
     function findBadgeField(root) {
         var result = null;
         Array.prototype.some.call(root.querySelectorAll('.profile_field'), function (field) {
@@ -161,16 +176,13 @@
         return result;
     }
 
-    // Construit la galerie d'un profil complet.
     function render(root) {
         var field = findBadgeField(root);
         if (!field || field.getAttribute('data-cj-badges-ready') === 'true') return;
 
-        // Selon le type de profil, Forumactif ne range pas toujours la valeur au même endroit.
         var valueNode = field.querySelector('field');
         var uneditable = field.querySelector('.field_uneditable');
         var raw = uneditable ? uneditable.textContent : (valueNode ? valueNode.textContent : '');
-        // Les virgules, espaces, points-virgules et barres peuvent tous séparer les codes.
         var codes = String(raw || '').toLowerCase().split(/[\s,;|]+/).filter(Boolean);
         var validCodes = codes.filter(function (code, index) {
             return BADGES[code] && codes.indexOf(code) === index;
@@ -180,7 +192,9 @@
 
         var labelNode = field.querySelector(':scope > label');
 
-        // On libère toute la largeur du champ pour éviter d'entasser les badges.
+        /* Les règles générales du profil imposent une grille 95px + contenu.
+           On neutralise directement cette grille pour laisser toute la largeur
+           à la galerie, sur page complète comme dans la popup AJAX. */
         field.style.setProperty('display', 'block', 'important');
         field.style.setProperty('grid-column', '1 / -1', 'important');
         field.style.setProperty('width', '100%', 'important');
@@ -188,18 +202,15 @@
         field.style.setProperty('margin', '0', 'important');
         field.style.setProperty('padding', '0', 'important');
 
-        // Une fois la galerie prête, le titre du champ et la liste des codes ne servent plus.
         if (labelNode) labelNode.style.setProperty('display', 'none', 'important');
         if (valueNode) valueNode.style.setProperty('display', 'none', 'important');
 
-        // Le conteneur qui recevra toutes les images.
         var gallery = document.createElement('div');
         gallery.className = 'cj-badges-gallery';
         gallery.style.setProperty('display', 'flex', 'important');
         gallery.style.setProperty('flex-flow', 'row wrap', 'important');
         gallery.style.setProperty('width', '100%', 'important');
 
-        // Un code valide donne une image et son petit intitulé au survol.
         validCodes.forEach(function (code) {
             var badge = BADGES[code];
             var publicLabel = publicBadgeLabel(badge[0]);
@@ -212,6 +223,7 @@
             image.src = BASE + badge[1];
             image.alt = publicLabel;
             image.loading = 'lazy';
+            image.draggable = false;
             image.width = 58;
             image.height = 58;
 
@@ -224,13 +236,11 @@
             gallery.appendChild(item);
         });
 
-        // Cette marque empêche le script de refaire deux fois la même galerie.
         field.classList.add('cj-profile__badges-field');
         field.appendChild(gallery);
         field.setAttribute('data-cj-badges-ready', 'true');
     }
 
-    // Même principe, mais pour les petits profils affichés à côté des messages.
     function renderPostBadges(container) {
         var fields = container.querySelectorAll
             ? container.querySelectorAll('.post_row .user_field.field-badges, .post_row .user_field')
@@ -243,7 +253,6 @@
             if (!field.classList.contains('field-badges') &&
                 cleanLabel(label ? label.textContent : '') !== 'badges') return;
 
-            // Ici, Forumactif place les codes dans .field_content.
             var value = field.querySelector('.field_content');
             var raw = value ? value.textContent : '';
             var codes = String(raw || '').toLowerCase().split(/[\s,;|]+/).filter(Boolean);
@@ -253,7 +262,6 @@
 
             if (!validCodes.length) return;
 
-            // Cette galerie a sa propre classe pour garder une taille adaptée au miniprofil.
             var gallery = document.createElement('div');
             gallery.className = 'cj-badges-gallery cj-post-badges-gallery';
 
@@ -269,6 +277,7 @@
                 image.src = BASE + badge[1];
                 image.alt = publicLabel;
                 image.loading = 'lazy';
+                image.draggable = false;
                 image.width = 42;
                 image.height = 42;
 
@@ -281,7 +290,6 @@
                 gallery.appendChild(item);
             });
 
-            // On cache le champ d'origine seulement lorsque les images sont prêtes.
             if (label) label.style.setProperty('display', 'none', 'important');
             if (value) value.style.setProperty('display', 'none', 'important');
             var separator = field.querySelector('.field_separator');
@@ -293,7 +301,6 @@
         });
     }
 
-    // Cherche les profils présents dans le morceau de page reçu.
     function scan(container) {
         if (container && container.matches && container.matches('#wombat.cj-profile')) render(container);
         if (container && container.querySelectorAll) {
@@ -302,8 +309,15 @@
         }
     }
 
-    // Premier passage au chargement, puis nouveau passage pour les popups ajoutées en AJAX.
     function start() {
+        document.addEventListener('contextmenu', function (event) {
+            if (event.target.closest && event.target.closest('.cj-badge')) event.preventDefault();
+        }, true);
+
+        document.addEventListener('dragstart', function (event) {
+            if (event.target.closest && event.target.closest('.cj-badge')) event.preventDefault();
+        }, true);
+
         scan(document);
         new MutationObserver(function (mutations) {
             mutations.forEach(function (mutation) {
@@ -312,7 +326,7 @@
         }).observe(document.body, { childList: true, subtree: true });
     }
 
-    // Le script fonctionne qu'il soit chargé avant ou après le reste de la page.
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
     else start();
 })();
+
