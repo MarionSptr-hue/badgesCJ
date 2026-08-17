@@ -222,7 +222,7 @@
             var image = document.createElement('img');
             image.src = BASE + badge[1];
             image.alt = publicLabel;
-            image.loading = 'lazy';
+            image.loading = 'eager';
             image.draggable = false;
             image.width = 58;
             image.height = 58;
@@ -276,7 +276,7 @@
                 var image = document.createElement('img');
                 image.src = BASE + badge[1];
                 image.alt = publicLabel;
-                image.loading = 'lazy';
+                image.loading = 'eager';
                 image.draggable = false;
                 image.width = 42;
                 image.height = 42;
@@ -329,4 +329,3 @@
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
     else start();
 })();
-
