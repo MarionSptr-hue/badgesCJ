@@ -1,4 +1,4 @@
-/* affichage des badges dans les profils */
+/* Concrete Jungle — affichage des badges dans les profils */
 ;(function () {
     'use strict';
 
@@ -111,9 +111,9 @@
         'london-metro-4': ['Métro londonien', 'special-london/metro-4.png'],
         'london-metro-5': ['Métro londonien', 'special-london/metro-5.png'],
 
-        'social-media-addict': ['Social Media Addict', 'social-media/social-media-addict.png'],
-        'social-serial-crush': ['Serial Crush', 'social-media/serial-crush.png'],
-        'social-popular': ['Populaire', 'social-media/popular.png'],
+        'main-feed-energy': ['Main Feed Energy', 'social-media/main-feed-energy.png'],
+        'swipe-right': ['Swipe Right', 'social-media/swipe-right.png'],
+        'influencer-material': ['Influencer Material', 'social-media/influencer-material.png'],
 
         'rp-slow': ['Rythme RP lent', 'rythme-rp/slow-rp.png'],
         'rp-fast': ['Rythme RP rapide', 'rythme-rp/fast-rp.png'],
