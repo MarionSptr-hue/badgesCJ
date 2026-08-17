@@ -1,5 +1,7 @@
 /* galerie des badges de profil */
 
+/* Concrete Jungle — galerie des badges de profil */
+
 #wombat.cj-profile .cj-profile__drawer-content .profile_field.cj-profile__badges-field {
     display: block !important;
     grid-column: 1 / -1 !important;
@@ -29,7 +31,7 @@ html body #wombat.cj-profile .profile_infos.cj-profile__main [data-cj-zone="badg
     gap: 10px;
     justify-content: flex-start;
     width: 100% !important;
-    max-width: none !important;
+    max-width: 466px !important;
     margin: 0 !important;
     padding: 0 !important;
 }
@@ -99,6 +101,8 @@ html body #wombat.cj-profile .profile_infos.cj-profile__main [data-cj-zone="badg
     max-width: none !important;
     max-height: none !important;
     object-fit: cover;
+    -webkit-user-drag: none;
+    user-select: none;
 }
 
 /* Badges dans le miniprofil des sujets. */
@@ -147,6 +151,8 @@ html body #wombat.cj-profile .profile_infos.cj-profile__main [data-cj-zone="badg
     max-width: none !important;
     max-height: none !important;
     object-fit: cover !important;
+    -webkit-user-drag: none !important;
+    user-select: none !important;
 }
 
 .post_row .cj-post-badge:hover {
@@ -183,7 +189,7 @@ html body #wombat.cj-profile .profile_infos.cj-profile__main [data-cj-zone="badg
 }
 
 
-/* CORRECTIF BADGES 1 */
+/* CORRECTIF */
 
 html body #wombat.cj-profile .profile_infos.cj-profile__main [data-cj-zone="badges"].cj-profile__drawer-content > .profile_field.cj-profile__badges-field {
     display: block !important;
@@ -206,7 +212,7 @@ html body #wombat.cj-profile [data-cj-zone="badges"] .cj-badges-gallery {
     justify-content: flex-start !important;
     gap: 10px !important;
     width: 100% !important;
-    max-width: none !important;
+    max-width: 466px !important;
     margin: 0 !important;
     padding: 0 !important;
 }
