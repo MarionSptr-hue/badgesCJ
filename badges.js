@@ -1,5 +1,5 @@
-/* Concrete Jungle — bibliothèque complète des badges
-   Mise à jour : 18 août 2026 — 124 visuels */
+/* bibliothèque des badges
+   MAJ : 20/O8/2026 — 125 badges */
 ;(function () {
     'use strict';
 
@@ -132,6 +132,7 @@
 
         'misc-omamori': ['Omamori', 'divers/omamori.png'],
         'misc-floral-design': ['Floral Design', 'divers/floral-design.png'],
+        'trophycb-1': ['Trophée CB', 'divers/trophycb-1.png'],
 
         'reward-welcome-wagon': ['Welcome Wagon', 'flood-et-vie-du-forum/welcome-wagon.png'],
         'reward-take-a-chance-on-me': ['Take a Chance on Me', 'flood-et-vie-du-forum/take-a-chance-on-me.png'],
