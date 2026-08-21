@@ -1,5 +1,5 @@
 /* bibliothèque des badges
-   MAJ : 20/O8/2026 — 125 badges */
+   MAJ : 21/08/2026 — 127 visuels */
 ;(function () {
     'use strict';
 
@@ -143,6 +143,7 @@
         'reward-out-and-about': ['Out and About', 'flood-et-vie-du-forum/out-and-about.png'],
         'reward-oops-i-did-it-again': ['Oops, I Did It Again', 'flood-et-vie-du-forum/oops-i-did-it-again.png'],
         'reward-one-year-later': ['One Year Later', 'flood-et-vie-du-forum/one-year-later.png'],
+        'reward-on-a-roll': ['On a Roll', 'flood-et-vie-du-forum/on-a-roll.png'],
         'reward-nailed-it': ['Nailed It', 'flood-et-vie-du-forum/nailed-it.png'],
         'reward-matchmaker': ['Matchmaker', 'flood-et-vie-du-forum/matchmaker.png'],
         'reward-limited-edition': ['Limited Edition', 'flood-et-vie-du-forum/limited-edition.png'],
@@ -156,6 +157,7 @@
         'reward-build-a-family': ['Build a Family', 'flood-et-vie-du-forum/build-a-family.png'],
         'reward-booked-and-busy-1': ['Booked and Busy', 'flood-et-vie-du-forum/booked-and-busy-1.png'],
         'reward-archivist': ['Archivist', 'flood-et-vie-du-forum/archivist.png'],
+        'reward-recidivist': ['Recidivist', 'flood-et-vie-du-forum/recidivist.png'],
         'reward-adopt-a-newbie': ['Adopt a Newbie', 'flood-et-vie-du-forum/adopt-a-newbie.png']
     };
 
@@ -338,3 +340,4 @@
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
     else start();
 })();
+
